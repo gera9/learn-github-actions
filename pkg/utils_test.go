@@ -9,7 +9,7 @@ func TestGetGreeting(t *testing.T) {
 	}{
 		{
 			name: "Test 1 ok",
-			want: "Hello, world",
+			want: "Hello, world!",
 		},
 	}
 	for _, tt := range tests {
