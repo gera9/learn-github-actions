@@ -1,10 +1,16 @@
 package main
 
 import (
-	"fmt"
 	"gera9/learn-github-actions/pkg"
+
+	"go.uber.org/zap"
 )
 
 func main() {
-	fmt.Printf("pkg.GetGreeting(): %v\n", pkg.GetGreeting())
+	logger, _ := zap.NewProduction()
+	defer logger.Sync()
+	logger.Info("message",
+		// Structured context as strongly typed Field values.
+		zap.String("urlpkg.GetGreeting():", pkg.GetGreeting()),
+	)
 }
